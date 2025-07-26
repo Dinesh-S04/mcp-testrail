@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// TestRail MCP Serverのエントリーポイント
+// TestRail MCP Server entry point
 import { startServer } from "./server/server.js";
 
-// サーバー起動
+// Start server
 startServer();
