@@ -1,0 +1,51 @@
+{
+  "name": "@dineshselvaraj/mcp-testrail",
+  "author": "dineshselvaraj",
+  "homepage": "https://github.com/dinesh-s04/mcp-testrail",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "0.13.1",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "start": "node dist/sse.js",
+    "start:stdio": "node dist/stdio.js",
+    "format": "biome format --write ./src",
+    "test": "vitest ./test --reporter=verbose --coverage",
+    "test:ci": "vitest run ./test --silent --coverage --reporter=verbose",
+    "start:fastmcp": "fastmcp dev src/index.ts",
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "debug": "node scripts/debug.js"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/inspector": "^0.14.3",
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.13.14",
+    "@vitest/coverage-v8": "^3.0.9",
+    "typescript": "~5.7.2",
+    "vitest": "^3.0.9"
+  },
+  "dependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@modelcontextprotocol/sdk": "^1.8.0",
+    "axios": "^1.8.4",
+    "dotenv": "^16.4.5",
+    "fastmcp": "^1.20.5",
+    "form-data": "^4.0.0",
+    "zod": "^3.24.2"
+  },
+  "engines": {
+    "node": ">=20.18.1 <=22.14.0"
+  },
+  "bin": {
+    "mcp-testrail": "./dist/stdio.js"
+  }
+}
