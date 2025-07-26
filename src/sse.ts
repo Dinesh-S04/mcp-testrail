@@ -1,5 +1,5 @@
-// TestRail MCP ServerのSSEエントリーポイント
+// TestRail MCP Server SSE entry point
 import { startServer } from "./server/server.js";
 
-// SSEサーバー起動
+// Start SSE server
 startServer();
